@@ -1,6 +1,4 @@
 
-console.log('krishna is a god')
-
 
 
 const weatherForm = document.querySelector('#form')
