@@ -41,12 +41,23 @@ app.get('/about', (req,res)=>{
     })
 })
 
-app.get('*', (req,res)=>{
-    res.render('index',{
-        title: 'weather',
-        name: 'Prateek'
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Prateek',
+        errorMessage: 'Help article not found.'
     })
 })
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Prateek Mishra',
+        errorMessage: 'Error 404, Page not found.'
+    })
+})
+
+
 
 app.get('/weather', (req,res)=>{
     if(!req.query.address){
