@@ -41,6 +41,13 @@ app.get('/about', (req,res)=>{
     })
 })
 
+app.get('*', (req,res)=>{
+    res.render('index',{
+        title: 'weather',
+        name: 'Prateek'
+    })
+})
+
 app.get('/weather', (req,res)=>{
     if(!req.query.address){
         return res.send({
