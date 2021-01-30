@@ -27,9 +27,9 @@ app.get('', (req,res)=>{
     })
 })
 
-app.get('/help', (req,res)=>{
-    res.render('help',{
-        title: 'help',
+app.get('/portfolio', (req,res)=>{
+    res.render('portfolio',{
+        title: 'portfolio',
         name: 'Prateek'
     })
 })
@@ -41,13 +41,13 @@ app.get('/about', (req,res)=>{
     })
 })
 
-app.get('/help/*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        name: 'Prateek',
-        errorMessage: 'Help article not found.'
-    })
-})
+// app.get('/help/*', (req, res) => {
+//     res.render('404', {
+//         title: '404',
+//         name: 'Prateek',
+//         errorMessage: 'Help article not found.'
+//     })
+// })
 
 
 
