@@ -1,9 +1,9 @@
 body {
     margin: 0;
-    background-color: #c8fdcb;
+    background-color: #3EEFE5;
 }
 .header {
-    background-color: rgb(0,0,0,0.1);
+    background-color: rgb(0,0,0,0.06);
     width: auto;
     height: 60px;
 }
