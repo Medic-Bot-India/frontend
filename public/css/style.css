@@ -35,6 +35,7 @@ body {
     float: right;
     margin: 10px 20px 0 20px;
     padding: 10px;
+    text-decoration: none;
 }
 .header_link:hover {
     color: rgb(1, 7, 63);
@@ -47,6 +48,10 @@ body {
     /* background-color: rgb(232, 243, 167); */
     padding: 130px;
 }
+#main_content h1 {
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
 #form {
     align-content: center;
 }
@@ -55,8 +60,9 @@ body {
 }
 
 #button {
-    background-color: blue;
+    background-color: rgb(32, 88, 127);
     padding: 5px;
+    color: #f1f1f1;
 }
 footer {
     text-align: center;
