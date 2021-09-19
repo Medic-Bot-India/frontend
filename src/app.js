@@ -1,11 +1,11 @@
 const hbs = require('hbs')
 const path = require('path')
 const express = require('express')
-const geocode = require('./utils/geocode')
-const forecast = require('./utils/forecast')
+// const geocode = require('./utils/geocode')
+// const forecast = require('./utils/forecast')
 
 const app= express();
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 // console.log(__dirname)
 
 
@@ -22,21 +22,21 @@ app.use(express.static(publicDirectory))
 
 app.get('', (req,res)=>{
     res.render('index',{
-        title: 'weather',
+        title: 'MedicBot',
         name: 'Prateek'
     })
 })
 
-app.get('/portfolio', (req,res)=>{
-    res.render('portfolio',{
-        title: 'portfolio',
+app.get('/history', (req,res)=>{
+    res.render('history',{
+        title: 'history',
         name: 'Prateek'
     })
 })
 
-app.get('/about', (req,res)=>{
-    res.render('about',{
-        title: 'about',
+app.get('/docs', (req,res)=>{
+    res.render('docs',{
+        title: 'docs',
         name: 'Prateek'
     })
 })
@@ -52,33 +52,33 @@ app.get('/about', (req,res)=>{
 
 
 
-app.get('/weather', (req,res)=>{
-    if(!req.query.address){
-        return res.send({
-            error: 'please provide an address'
-        })
-    }
+// app.get('/weather', (req,res)=>{
+//     if(!req.query.address){
+//         return res.send({
+//             error: 'please provide an address'
+//         })
+//     }
 
-    geocode(req.query.address, (error,{latitude,longitude,location}={})=>{
-        if(error){
-            return res.send({
-                error
-            })
-        }
-        forecast(latitude, longitude, (error, forecastData)=>{
-            if(error){
-                return res.send({
-                    error: 'please provide an address'
-                })
-              }
-            res.send({
-                location,
-                forecastData
-            })
+//     geocode(req.query.address, (error,{latitude,longitude,location}={})=>{
+//         if(error){
+//             return res.send({
+//                 error
+//             })
+//         }
+//         forecast(latitude, longitude, (error, forecastData)=>{
+//             if(error){
+//                 return res.send({
+//                     error: 'please provide an address'
+//                 })
+//               }
+//             res.send({
+//                 location,
+//                 forecastData
+//             })
             
-        })
-  })
-})
+//         })
+//   })
+// })
 
 app.get('*', (req, res) => {
     res.render('404', {
