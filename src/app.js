@@ -80,13 +80,13 @@ app.get('/docs', (req,res)=>{
 //   })
 // })
 
-app.get('*', (req, res) => {
-    res.render('404', {
-        title: '404',
-        name: 'Prateek Mishra',
-        errorMessage: 'Error 404, Page not found.'
-    })
-})
+// app.get('*', (req, res) => {
+//     res.render('404', {
+//         title: '404',
+//         name: 'Prateek Mishra',
+//         errorMessage: 'Error 404, Page not found.'
+//     })
+// })
 
 
 
