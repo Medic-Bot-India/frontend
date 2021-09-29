@@ -96,7 +96,7 @@ app.post("/register", async (req,res) => {
         
     }
 })
-
+var active= ""
 app.post("/login", (req,res) => {
     const userLogin = req.body;
     //const x= (User.findOne({username: userLogin.email}) ||  User.findOne({email: user.email}) )
@@ -122,7 +122,7 @@ app.post("/login", (req,res) => {
                         return res.json({errmessage: "Sucess", token: "Bearer " + token})
                     }
                 )*/
-                    
+                active = userLogin.username
                 res.render('index', {
                     username: userLogin.username
                 });
@@ -145,6 +145,7 @@ app.get('', (req,res)=>{
     res.render('index',{
         title: 'MedicBot',
         name: 'Prateek',
+        username: active
     })
 })
 app.get('/register', (req, res) => {
@@ -158,12 +159,14 @@ app.get('/history', (req,res)=>{
     res.render('history',{
         title: 'history',
         name: 'Prateek',
+        username: active
     })
 })
 app.get('/account', (req,res)=>{
     res.render('account',{
         title: 'history',
         name: 'Prateek',
+        username: active
     })
 })
 
@@ -171,6 +174,7 @@ app.get('/docs', (req,res)=>{
     res.render('docs',{
         title: 'docs',
         name: 'Prateek',
+        username: active
     })
 })
 
