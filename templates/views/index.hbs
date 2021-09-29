@@ -10,6 +10,11 @@
     <body>
       <div id="index_page">
          {{>header}}
+          {{!-- {{#if message}}
+                    <div class="alert {{messageClass}}" role="alert">
+                        {{message}}
+                    </div>
+                {{/if}} --}}
         <div id="main_content">
           <p><span>Hii,</span><br> I am your<br><span>Virtual Assistant</span></p>
         </div>
@@ -22,31 +27,7 @@
 
       <div id="rasa-chat-widget" data-websocket-url="http://localhost:5005"></div>
       <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
-
-        {{!-- <script src="/js/app.js"></script>
-        <script>!(function () {
-  let e = document.createElement("script"),
-    t = document.head || document.getElementsByTagName("head")[0];
-  (e.src =
-    "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
-    // Replace 1.x.x with the version that you want
-    (e.async = !0),
-    (e.onload = () => {
-      window.WebChat.default(
-        {
-          initPayload: '/greet_0_1',
-          title: 'Medicbot',
-          showMessageDate: true,
-          customData: { language: "en" },
-          socketUrl: "http://localhost:5005",
-          // add other props here
-        },
-        null
-      );
-    }),
-    t.insertBefore(e, t.firstChild);
-})();
-</script> --}}
+      
     </body>
     
 </html>
